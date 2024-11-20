@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function AdventuresCard({ data }) {
     const {
+        id,
         adventureTitle,
         image,
         adventureLevel,
@@ -26,7 +27,7 @@ export default function AdventuresCard({ data }) {
                     <p> Adventures Label: {adventureLevel}</p>
                     <p className="font-semibold text-base-800">{location}</p>
                     <div className="card-actions my-2">
-                        <Link className="px-4 py-3 text-white rounded-full transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-105 hover:bg-indigo-500 duration-300 ">Explore Now</Link>
+                        <Link to={`/about/${id}`} className="px-4 py-3 text-white rounded-full transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-105 hover:bg-indigo-500 duration-300 ">Explore Now</Link>
                     </div>
                 </div>
             </div>

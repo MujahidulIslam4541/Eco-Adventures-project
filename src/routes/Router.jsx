@@ -6,6 +6,7 @@ import Register from "../Pages/Register";
 import AdventuresCards from "../Components/AdventuresCards";
 
 
+
 const Router=createBrowserRouter([
     {
         path:"/",

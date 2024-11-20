@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
 
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import  { authContext } from "../Provider/AuthProvider";
 
 export default function Navbar() {
+    const {user,logOut}=useContext(authContext)
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -29,7 +32,7 @@ export default function Navbar() {
                             <Link to='/user'>UpdateUser</Link>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className="btn btn-ghost text-xl">{user &&user.email}</a>
                 </div>
                 <div className="navbar-center hidden lg:flex ">
                     <ul className="menu menu-horizontal px-1 space-x-4">
@@ -39,7 +42,10 @@ export default function Navbar() {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to={`auth/login`}>Login</Link>
+                    {
+                        user && user.email ?<button onClick={logOut}className="btn">Log-Out</button>: <Link className="btn" to={`auth/login`}>Login</Link>
+                    }
+                   
                 </div>
             </div>
         </div>

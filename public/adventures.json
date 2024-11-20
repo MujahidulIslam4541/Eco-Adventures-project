@@ -1,0 +1,245 @@
+[
+    {
+        "id": 1,
+        "adventureTitle": "Tropical Rainforest Hike",
+        "image": "https://i.ibb.co.com/CtqsTgT/Molokai-hiking-hidden-waterfalls.jpg",
+        "categoryName": "Hiking",
+        "shortDescription": "Explore lush rainforests with guided trails and unique wildlife.",
+        "adventureCost": 120,
+        "bookingAvailability": true,
+        "location": "Amazon Rainforest, Brazil",
+        "duration": "6 hours",
+        "adventureLevel": "Moderate",
+        "includedItems": [
+            "Guide",
+            "Snacks",
+            "Eco-friendly water bottle"
+        ],
+        "ecoFriendlyFeatures": [
+            "Plastic-free zone",
+            "Use of biodegradable materials"
+        ],
+        "maxGroupSize": 10,
+        "specialInstructions": [
+            "Wear sturdy shoes",
+            "Carry insect repellent",
+            "Respect wildlife"
+        ]
+    },
+    {
+        "id": 2,
+        "adventureTitle": "Mountain Peak Camping",
+        "image": "https://i.ibb.co.com/x5mwPMP/tent-by-lake-with-mountain-background-1340-34135.jpg",
+        "categoryName": "Camping",
+        "shortDescription": "Experience serene mountain views and overnight camping.",
+        "adventureCost": 200,
+        "bookingAvailability": true,
+        "location": "Rocky Mountains, USA",
+        "duration": "2 days, 1 night",
+        "adventureLevel": "Challenging",
+        "includedItems": [
+            "Tent",
+            "Meals",
+            "Campfire setup"
+        ],
+        "ecoFriendlyFeatures": [
+            "Solar-powered lights",
+            "Leave No Trace policy"
+        ],
+        "maxGroupSize": 8,
+        "specialInstructions": [
+            "Pack warm clothing",
+            "Stay on marked trails",
+            "No open fires allowed"
+        ]
+    },
+    {
+        "id": 3,
+        "adventureTitle": "Mangrove Kayaking",
+        "image": "https://i.ibb.co.com/HDLZdcw/Kayaking.jpg",
+        "categoryName": "Water Adventure",
+        "shortDescription": "Paddle through pristine mangroves and discover marine life.",
+        "adventureCost": 90,
+        "bookingAvailability": true,
+        "location": "Sundarbans, Bangladesh",
+        "duration": "4 hours",
+        "adventureLevel": "Easy",
+        "includedItems": [
+            "Kayak",
+            "Safety gear",
+            "Guide"
+        ],
+        "ecoFriendlyFeatures": [
+            "No motorboats used",
+            "Mangrove conservation fund"
+        ],
+        "maxGroupSize": 6,
+        "specialInstructions": [
+            "Wear quick-dry clothes",
+            "Bring sunscreen",
+            "Follow guide's instructions"
+        ]
+    },
+    {
+        "id": 4,
+        "adventureTitle": "Desert Wildlife Safari",
+        "image": "https://i.ibb.co.com/5M4ftbR/successful-wildlife-trip-Wahiba-Sands-1024x585.webp",
+        "categoryName": "Wildlife",
+        "shortDescription": "Explore desert wildlife habitats with sustainable vehicles.",
+        "adventureCost": 150,
+        "bookingAvailability": false,
+        "location": "Sahara Desert, Morocco",
+        "duration": "5 hours",
+        "adventureLevel": "Moderate",
+        "includedItems": [
+            "Guide",
+            "Binoculars",
+            "Refreshments"
+        ],
+        "ecoFriendlyFeatures": [
+            "Solar-powered vehicles",
+            "Eco-friendly campsite"
+        ],
+        "maxGroupSize": 12,
+        "specialInstructions": [
+            "Wear sun protection",
+            "Bring water bottles",
+            "Avoid littering"
+        ]
+    },
+    {
+        "id": 5,
+        "adventureTitle": "Coral Reef Diving",
+        "image": "https://i.ibb.co.com/7vCqtc8/Impact-Ofonts-Green-Living-Zone-2.jpg",
+        "categoryName": "Scuba Diving",
+        "shortDescription": "Dive into crystal-clear waters to witness vibrant coral reefs.",
+        "adventureCost": 250,
+        "bookingAvailability": true,
+        "location": "Great Barrier Reef, Australia",
+        "duration": "1 day",
+        "adventureLevel": "Advanced",
+        "includedItems": [
+            "Diving gear",
+            "Lunch",
+            "Professional guide"
+        ],
+        "ecoFriendlyFeatures": [
+            "No-touch diving policy",
+            "Reef restoration project"
+        ],
+        "maxGroupSize": 5,
+        "specialInstructions": [
+            "Certified divers only",
+            "Avoid touching corals",
+            "Listen to safety briefings"
+        ]
+    },
+    {
+        "id": 6,
+        "adventureTitle": "Arctic Glacier Trek",
+        "image": "https://i.ibb.co.com/M25Cqzw/expedition-team-gauging-arctic-glacier-depths-174954-26276.jpg",
+        "categoryName": "Trekking",
+        "shortDescription": "Embark on a guided trek across breathtaking Arctic glaciers.",
+        "adventureCost": 300,
+        "bookingAvailability": false,
+        "location": "Svalbard, Norway",
+        "duration": "3 days",
+        "adventureLevel": "Extreme",
+        "includedItems": [
+            "Winter gear",
+            "Meals",
+            "Professional guide"
+        ],
+        "ecoFriendlyFeatures": [
+            "Eco-friendly accommodations",
+            "Minimal impact trekking routes"
+        ],
+        "maxGroupSize": 8,
+        "specialInstructions": [
+            "Wear thermal clothing",
+            "Stay hydrated",
+            "Follow safety protocols"
+        ]
+    },
+    {
+        "id": 7,
+        "adventureTitle": "Volcanic Hot Springs Tour",
+        "image": "https://i.ibb.co.com/pPBSrNh/images-1.jpg",
+        "categoryName": "Relaxation",
+        "shortDescription": "Relax in natural hot springs surrounded by volcanic landscapes.",
+        "adventureCost": 80,
+        "bookingAvailability": true,
+        "location": "Hokkaido, Japan",
+        "duration": "3 hours",
+        "adventureLevel": "Easy",
+        "includedItems": [
+            "Towel",
+            "Snacks",
+            "Guide"
+        ],
+        "ecoFriendlyFeatures": [
+            "Locally sourced materials",
+            "Geothermal energy utilization"
+        ],
+        "maxGroupSize": 10,
+        "specialInstructions": [
+            "Bring swimwear",
+            "Avoid using soap in springs",
+            "Follow guide's instructions"
+        ]
+    },
+    {
+        "id": 8,
+        "adventureTitle": "Jungle Canopy Zipline",
+        "image": "https://i.ibb.co.com/2gzVQbR/7c.jpg",
+        "categoryName": "Adventure Sports",
+        "shortDescription": "Fly through the treetops with an exhilarating zipline experience.",
+        "adventureCost": 110,
+        "bookingAvailability": true,
+        "location": "Monteverde Cloud Forest, Costa Rica",
+        "duration": "2 hours",
+        "adventureLevel": "Moderate",
+        "includedItems": [
+            "Safety harness",
+            "Helmet",
+            "Guide"
+        ],
+        "ecoFriendlyFeatures": [
+            "Eco-certified materials",
+            "Tree protection measures"
+        ],
+        "maxGroupSize": 8,
+        "specialInstructions": [
+            "Wear comfortable clothing",
+            "Follow safety guidelines",
+            "Secure loose items"
+        ]
+    },
+    {
+        "id": 9,
+        "adventureTitle": "Savanna Wildlife Photography",
+        "image": "https://i.ibb.co.com/LN18BDJ/wildlife-photography-male-lion-haunting-600nw-2296056907.webp",
+        "categoryName": "Photography",
+        "shortDescription": "Capture stunning images of wildlife in their natural habitat.",
+        "adventureCost": 180,
+        "bookingAvailability": true,
+        "location": "Serengeti, Tanzania",
+        "duration": "Full day",
+        "adventureLevel": "Easy",
+        "includedItems": [
+            "Photography guide",
+            "Lunch",
+            "Transportation"
+        ],
+        "ecoFriendlyFeatures": [
+            "Electric vehicles",
+            "Wildlife conservation fee"
+        ],
+        "maxGroupSize": 6,
+        "specialInstructions": [
+            "Bring your camera gear",
+            "Maintain distance from animals",
+            "Respect the environment"
+        ]
+    }
+]

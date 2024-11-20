@@ -3,16 +3,23 @@ import MainLayoutes from "../Layouts/MainLayoutes";
 import LoginPage from "../Pages/LoginPage";
 import AuthLayout from "../Layouts/AuthLayout";
 import Register from "../Pages/Register";
+import AdventuresCards from "../Components/AdventuresCards";
 
 
 const Router=createBrowserRouter([
     {
         path:"/",
-        element:<MainLayoutes></MainLayoutes>
+        element:<MainLayoutes></MainLayoutes>,
+       children:[
+        {
+            path:"/",
+            element: <AdventuresCards></AdventuresCards>,
+        },
+       ]
     },
     {
         path:"/about",
-        element:<h2>About</h2>
+        element:<h2>Adventures</h2>
     },
     {
         path:"/user",

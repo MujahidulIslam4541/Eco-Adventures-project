@@ -5,7 +5,7 @@ import slider3 from "../assets/download (1).jpeg"
 export default function Banner() {
     return (
         <div>
-            <div className="carousel h-96 rounded-lg">
+            <div className="carousel h-[80vh] rounded-lg">
                 
                 <div id="slide2" className="carousel-item relative w-full">
                     <img

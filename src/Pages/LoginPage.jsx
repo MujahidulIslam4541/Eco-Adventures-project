@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 
@@ -7,6 +7,9 @@ import toast from "react-hot-toast";
 export default function LoginPage() {
 
     const {loginUser,setUser}=useContext(authContext)
+    const location=useLocation()
+    const navigate=useNavigate()
+    console.log(location)
 
 const handleSubmit=(e)=>{
     e.preventDefault()
@@ -19,10 +22,11 @@ const handleSubmit=(e)=>{
     .then(result=>{
         const user=result.user;
         setUser(user)
+        navigate(location?.state?location.state:"/")
         toast.success('Successfully Login!');
     })
     .catch(error=>{
-        toast.error('This is an error!',error.code);
+        toast.error('Invalid Email or Password',error.code);
     })
 }
 

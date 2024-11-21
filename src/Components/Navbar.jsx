@@ -2,6 +2,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import  { authContext } from "../Provider/AuthProvider";
+import { FaRegUserCircle } from "react-icons/fa";
 
 export default function Navbar() {
     const {user,logOut}=useContext(authContext)
@@ -32,7 +33,7 @@ export default function Navbar() {
                             <Link to='/user'>UpdateUser</Link>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">{user &&user.email}</a>
+                    <a className="btn btn-ghost text-xl">Eco Adventures</a>
                 </div>
                 <div className="navbar-center hidden lg:flex ">
                     <ul className="menu menu-horizontal px-1 space-x-4">
@@ -42,6 +43,16 @@ export default function Navbar() {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    <div className="">
+                        {
+                            user && user.email? 
+                            <div className="mr-2 flex gap-2">
+                                <p>{user?.displayName}</p>
+                                <img  className="w-10 rounded-full" src={user?.photoURL} alt="" />
+                            </div> :
+                            <FaRegUserCircle className="w-10" />
+                        }
+                    </div>
                     {
                         user && user.email ?<button onClick={logOut}className="btn">Log-Out</button>: <Link className="btn" to={`auth/login`}>Login</Link>
                     }

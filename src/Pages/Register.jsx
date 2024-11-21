@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 export default function Register() {
-
-    const { createNewUser,setUser } = useContext(authContext)
+    const navigate =useNavigate()
+    const { createNewUser,setUser,updateUserProfile } = useContext(authContext)
 
 
     const handleSubmit = (event) => {
@@ -22,6 +23,14 @@ export default function Register() {
                 const user = result.user;
                 setUser(user)
                 console.log(user)
+                updateUserProfile({displayName:name,photoURL:photo})
+                .then(()=>{
+                    navigate('/')
+                    toast.success('Register Successful');
+                })
+                .catch(error=>{
+                    toast.error('Invalid Email or Password',error.code);
+                })
             })
             .catch((error) => {
                 const errorCode = error.code;

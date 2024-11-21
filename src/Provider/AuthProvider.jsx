@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react"
 import app from "../Firebase/Firebase";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 
 
 export const authContext=createContext();
@@ -16,6 +16,9 @@ const [loading,setLoading]=useState(true)
 const createNewUser=(email,password)=>{
     setLoading(true)
     return createUserWithEmailAndPassword(auth, email,password)
+}
+const updateUserProfile=(updated)=>{
+    return updateProfile(auth.currentUser,updated);
 }
 
 useEffect(()=>{
@@ -52,7 +55,8 @@ const authInfo={
     createNewUser,
     logOut,
     loginUser,
-    loading
+    loading,
+    updateUserProfile
 }
 
 

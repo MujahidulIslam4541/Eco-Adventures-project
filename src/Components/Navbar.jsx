@@ -8,7 +8,7 @@ export default function Navbar() {
     const {user,logOut}=useContext(authContext)
     return (
         <div>
-            <div className="navbar h-10">
+            <div className="navbar h-10 sticky z-50 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -28,9 +28,9 @@ export default function Navbar() {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <Link className="bg-red-400" to='/about'>About</Link>
-                            <Link className="bg-red-400" to='/user'>UpdateUser</Link>
-                            <Link className="bg-red-400" to="/">Home</Link>
+                            <Link to='/about'>About</Link>
+                            <Link to='/user'>UpdateUser</Link>
+                            <Link to="/">Home</Link>
                         </ul>
                     </div>
                     <a className="font-semibold text-xl">Eco Ad<span className="text-indigo-500">vent</span>ures</a>
@@ -47,7 +47,7 @@ export default function Navbar() {
                         {
                             user && user.email? 
                             <div className="mr-2 flex gap-2">
-                                <p>{user?.displayName}</p>
+                                {/* <p>{user?.displayName}</p> */}
                                 <img  className=" w-10 rounded-full" src={user?.photoURL} alt="" />
                             </div> :
                             <img className="mr-2" src={userImage} alt="" />
@@ -55,7 +55,7 @@ export default function Navbar() {
                         }
                     </div>
                     {
-                        user && user.email ?<button onClick={logOut}className="px-6 p-2">Log-Out</button>: <Link className="px-6 p-2 border-2 border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white" to={`auth/login`}>Login</Link>
+                        user && user.email ?<button onClick={logOut}className="px-6 p-2 border-2 border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white">Log-Out</button>: <Link className="px-6 p-2 border-2 border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white" to={`auth/login`}>Login</Link>
                     }
                    
                 </div>

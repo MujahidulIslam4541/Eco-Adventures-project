@@ -1,15 +1,21 @@
-import slider1 from "../assets/slider2.jpg"
-import slider2 from "../assets/slider4.webp"
-import slider3 from "../assets/download (1).jpeg"
+
 
 export default function Banner() {
     return (
         <div>
-            <div className="carousel h-[80vh] rounded-lg">
-                
+            <div className="carousel h-[80vh] rounded-lg w-full">
+                <div id="slide1" className="carousel-item relative w-full">
+                    <img
+                        src="https://i.ibb.co.com/gDJCdP2/Kayaking-tours-in-Sur-mangroves.jpg"
+                        className="w-full" />
+                    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide4" className="btn btn-circle">❮</a>
+                        <a href="#slide2" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
                 <div id="slide2" className="carousel-item relative w-full">
                     <img
-                        src={slider2}
+                        src="https://i.ibb.co.com/ZzcKbkZ/Destinations-de-plongee-sous-marine-les-meilleurs-spots-au-monde-1.webp"
                         className="w-full" />
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                         <a href="#slide1" className="btn btn-circle">❮</a>
@@ -18,7 +24,7 @@ export default function Banner() {
                 </div>
                 <div id="slide3" className="carousel-item relative w-full">
                     <img
-                        src={slider3}
+                        src="https://i.ibb.co.com/319Wv5f/camping-mountains-with-view-lake-mountain-landscape-with-sunset-662214-27357.jpg"
                         className="w-full" />
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                         <a href="#slide2" className="btn btn-circle">❮</a>
@@ -27,7 +33,7 @@ export default function Banner() {
                 </div>
                 <div id="slide4" className="carousel-item relative w-full">
                     <img
-                        src={slider1}
+                        src="https://i.ibb.co.com/kDTMy33/8c5c729447979c8e69df69bfcf41996c.webp"
                         className="w-full" />
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                         <a href="#slide3" className="btn btn-circle">❮</a>

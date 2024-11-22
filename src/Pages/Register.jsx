@@ -2,7 +2,9 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
 
 
 export default function Register() {
@@ -50,8 +52,10 @@ export default function Register() {
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, provider)
             .then(result => {
+                const user = result.user;
+                setUser(user)
                 navigate('/')
-                toast.success('Successfully Register With Google!', result);
+                toast.success('Successfully Register With Google!');
 
             })
     }
@@ -61,8 +65,8 @@ export default function Register() {
 
     return (
         <div className="flex justify-center items-center min-h-screen">
-            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                <h2 className="text-xl font-semibold text-center">Register Your Account</h2>
+            <div className="card bg-slate-200 w-full max-w-sm shrink-0 shadow-2xl">
+                <h2 className="text-xl font-semibold  mt-5 text-center">Register Your Account</h2>
                 <form onSubmit={handleSubmit} className="card-body">
                     <div className="form-control">
                         <label className="label">
@@ -72,7 +76,7 @@ export default function Register() {
                             name="name"
                             type="text"
                             placeholder="Name"
-                            className="input input-bordered" required />
+                            className="input input-bordered bg-transparent" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -82,7 +86,7 @@ export default function Register() {
                             name="photo"
                             type="text"
                             placeholder="Photo URL"
-                            className="input input-bordered" required />
+                            className="input input-bordered bg-transparent" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -92,7 +96,7 @@ export default function Register() {
                             name="email"
                             type="email"
                             placeholder="email"
-                            className="input input-bordered" required />
+                            className="input input-bordered bg-transparent" required />
                     </div>
 
 
@@ -104,18 +108,18 @@ export default function Register() {
                             name="password"
                             type="password"
                             placeholder="password"
-                            className="input input-bordered" required />
+                            className="input input-bordered bg-transparent" required />
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Register</button>
+                        <button className="btn bg-blue-500 text-white hover:bg-blue-400">Register</button>
                     </div>
                     <p>Already Have An Account? <Link className="text-red-600" to={`/auth/login`}>Login</Link></p>
 
-                    <h2 className="text-center text-xl">Or</h2>
-                    <button onClick={handleGoogleSignIn} className="btn">Register With Google</button>
+                    <div className="divider">Or</div>
+                    <button onClick={handleGoogleSignIn} className="btn border-2 border-blue-500"> <span className="text-2xl"><FcGoogle></FcGoogle></span>Register With Google</button>
                 </form>
             </div>
         </div>

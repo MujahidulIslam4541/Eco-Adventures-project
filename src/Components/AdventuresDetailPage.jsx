@@ -1,4 +1,6 @@
 import { Link, useLoaderData, useParams } from "react-router-dom"
+import { FaArrowAltCircleLeft } from "react-icons/fa";
+
 
 
 export default function AdventuresDetailPage() {
@@ -13,7 +15,7 @@ export default function AdventuresDetailPage() {
     const {
         adventureTitle,
         image,
-        categoryName,
+        // categoryName,
         shortDescription,
         adventureCost,
         bookingAvailability,
@@ -31,40 +33,51 @@ export default function AdventuresDetailPage() {
 
     return (
         <div>
-            <div className="hero bg-base-200 min-h-screen">
-                <div className="hero-content flex-col lg:flex-row">
-                    <img
-                        src={image}
-                        className="max-w-sm rounded-lg shadow-2xl" />
+            <div className="hero border shadow-md rounded-2xl my-10 min-h-screen">
+                <div className="hero-content  flex-col lg:flex-row">
+                    <div className="lg:w-1/2 h-full">
+                        <img
+                            src={image}
+                            className="max-w-md rounded-lg shadow-2xl" />
+                    </div>
                     <div>
-                        <h1 className="text-5xl font-bold">{adventureTitle}</h1>
-                        <p>{categoryName}</p>
-                        <p className="py-6">{shortDescription}</p>
-                        <p>{adventureCost}</p>
-                        <p>{adventureLevel}</p>
-                        <p>{bookingAvailability}</p>
-                        <p>{location}</p>
-                        <p>{duration}</p>
-                        <p>{maxGroupSize}</p>
+                        <h1 className="text-3xl font-bold text-blue-500">{adventureTitle}</h1>
+                        <p className="py-4 font-semibold">{shortDescription}</p>
+                        <div className="space-y-2 mb-3">
+                            <div className="flex justify-between">
+                                <p>Adventures Cost: <span className="font-bold text-indigo-500">{adventureCost}$ </span></p>
+                                <p>Adventures level: <span className="font-semibold">{adventureLevel}</span></p>
+                            </div>
+                            <p>{bookingAvailability}</p>
+                            <p>Location: <span className="font-bold">{location}</span></p>
+                            <p>Duration: <span className="font-bold">{duration}</span></p>
+                            <p>Max Group Size: {maxGroupSize}</p>
+                        </div>
 
-                        <div className="">
+                        <hr />
+                        <h2 className="font-semibold mt-4">Included Items:</h2>
+                        <div className="grid grid-cols-2 py-2 border-b-2 border-dashed border-blue-400">
                             {
-                              includedItems.map((item,index)=><p key={index}>{item}</p>)  
+                                includedItems.map((item, index) => <li key={index}>{item}</li>)
                             }
                         </div>
 
-                        <div>
+
+                        <h2 className="font-semibold mt-4">Eco-Friendly Features:</h2>
+                        <div className="grid grid-cols-2 pb-5 border-b-2 border-dashed border-blue-400 ">
                             {
-                                ecoFriendlyFeatures.map((feature,index)=><p key={index}>{feature}</p>)
+                                ecoFriendlyFeatures.map((feature, index) => <li key={index}>{feature}</li>)
                             }
                         </div>
 
-                        <div>
+                        <hr />
+                        <h2 className="font-semibold mt-4">Special Instructions:</h2>
+                        <div className="grid grid-cols-2 gap-2 mb-4">
                             {
-                                specialInstructions.map((instruction,index)=><p key={index}>{instruction}</p>)
+                                specialInstructions.map((instruction, index) => <li key={index}>{instruction}</li>)
                             }
                         </div>
-                        <Link to="/" className="btn btn-primary">Get Started</Link>
+                        <Link to="/" className="btn border-2 border-blue-500 rounded-lg"> <span className="text-2xl"><FaArrowAltCircleLeft></FaArrowAltCircleLeft></span>Back To Home</Link>
                     </div>
                 </div>
             </div>

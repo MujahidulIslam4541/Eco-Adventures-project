@@ -48,7 +48,7 @@ export default function Navbar() {
                             user && user.email? 
                             <div className="mr-2 flex gap-2">
                                 {/* <p>{user?.displayName}</p> */}
-                                <img  className=" w-10 rounded-full" src={user?.photoURL} alt="" />
+                                <img  className=" w-10 h-10 rounded-full" src={user?.photoURL} alt="" />
                             </div> :
                             <img className="mr-2" src={userImage} alt="" />
                             

@@ -18,6 +18,7 @@ const Router = createBrowserRouter([
                 path: "/",
                 element: <AdventuresCards></AdventuresCards>,
             },
+           
         ]
     },
     {

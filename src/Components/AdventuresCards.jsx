@@ -17,5 +17,8 @@ export default function AdventuresCards() {
           adventuresCards.map(data=><AdventuresCard key={data.id} data={data}></AdventuresCard>)
         }
     </div>
+
+
+  
   )
 }

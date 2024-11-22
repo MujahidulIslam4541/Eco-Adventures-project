@@ -2,11 +2,12 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 
 export default function Register() {
-    const navigate =useNavigate()
-    const { createNewUser,setUser,updateUserProfile } = useContext(authContext)
+    const navigate = useNavigate()
+    const { createNewUser, setUser, updateUserProfile } = useContext(authContext)
 
 
     const handleSubmit = (event) => {
@@ -16,21 +17,23 @@ export default function Register() {
         const photo = from.photo.value;
         const email = from.email.value;
         const password = from.password.value;
-        console.log({ name, photo, email, password });
+        // console.log({ name, photo, email, password });
+
+        
 
         createNewUser(email, password)
             .then(result => {
                 const user = result.user;
                 setUser(user)
-                console.log(user)
-                updateUserProfile({displayName:name,photoURL:photo})
-                .then(()=>{
-                    navigate('/')
-                    toast.success('Register Successful');
-                })
-                .catch(error=>{
-                    toast.error('Invalid Email or Password',error.code);
-                })
+                // console.log(user)
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        navigate('/')
+                        toast.success('Register Successful');
+                    })
+                    .catch(error => {
+                        toast.error('Invalid Email or Password', error.code);
+                    })
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -39,6 +42,19 @@ export default function Register() {
             });
     }
 
+
+    const provider = new GoogleAuthProvider()
+
+    const auth = getAuth()
+
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                navigate('/')
+                toast.success('Successfully Register With Google!', result);
+
+            })
+    }
 
 
 
@@ -97,6 +113,9 @@ export default function Register() {
                         <button className="btn btn-primary">Register</button>
                     </div>
                     <p>Already Have An Account? <Link className="text-red-600" to={`/auth/login`}>Login</Link></p>
+
+                    <h2 className="text-center text-xl">Or</h2>
+                    <button onClick={handleGoogleSignIn} className="btn">Register With Google</button>
                 </form>
             </div>
         </div>

@@ -64,7 +64,7 @@ export default function Register() {
 
 
     return (
-        <div className="flex justify-center items-center min-h-screen">
+        <div className="flex justify-center items-center min-h-screen animate__animated animate__pulse">
             <div className="card bg-slate-200 w-full max-w-sm shrink-0 shadow-2xl">
                 <h2 className="text-xl font-semibold  mt-5 text-center">Register Your Account</h2>
                 <form onSubmit={handleSubmit} className="card-body">

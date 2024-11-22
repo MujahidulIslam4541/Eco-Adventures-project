@@ -6,6 +6,8 @@ import Register from "../Pages/Register";
 import AdventuresCards from "../Components/AdventuresCards";
 import AdventuresDetails from "../Components/AdventuresDetails";
 import PrivetRoutes from "./PrivetRoutes";
+import About from "../Components/About";
+import ErrorPage from "../Components/ErrorPage";
 
 
 
@@ -20,6 +22,10 @@ const Router = createBrowserRouter([
             },
            
         ]
+    },
+    {
+        path:"/aboutUs",
+        element:<About></About>
     },
     {
         path: "/about/:id",
@@ -49,7 +55,7 @@ const Router = createBrowserRouter([
     },
     {
         path: '*',
-        element: <h2>Error page</h2>
+        element: <ErrorPage></ErrorPage>
     },
 ])
 

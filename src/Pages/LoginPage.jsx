@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, sendPasswordResetEmail, signInWithPopup } from "firebase/auth";
 
 
 export default function LoginPage() {
@@ -11,14 +11,15 @@ export default function LoginPage() {
     const { loginUser, setUser } = useContext(authContext)
     const location = useLocation()
     const navigate = useNavigate()
-    console.log(location)
+    const emailRef=useRef()
+    
 
     const handleSubmit = (e) => {
         e.preventDefault()
         const from = e.target;
         const email = from.email.value;
         const password = from.password.value;
-        console.log({ email, password })
+       
 
         loginUser(email, password)
             .then(result => {
@@ -47,9 +48,22 @@ export default function LoginPage() {
             })
     }
 
+    const handleForgetPassword=()=>{
+            const email=emailRef.current.value;
+            if(!email){
+                toast.error('Please Provide Your Valid Email Address');
+            }
+            else{
+                sendPasswordResetEmail(auth,email)
+                .then(()=>{
+                    toast.success('Please Check Your Email And Reseat The Password...'); 
+                })
+            }
+    }
+
 
     return (
-        <div className="flex justify-center items-center min-h-screen">
+        <div className="flex justify-center items-center min-h-screen animate__animated animate__backInDown">
             <div className="card bg-slate-200 w-full max-w-sm shrink-0 shadow-2xl">
                 <h2 className="text-xl font-semibold text-center mt-5">Login Your Account</h2>
                 <form onSubmit={handleSubmit} className="card-body">
@@ -58,7 +72,7 @@ export default function LoginPage() {
                             <span className="label-text">Email</span>
                         </label>
                         <input
-                        
+                            ref={emailRef}
                             name="email"
                             type="email"
                             placeholder="email"
@@ -73,7 +87,7 @@ export default function LoginPage() {
                             type="password"
                             placeholder="password"
                             className="input input-bordered bg-transparent" required />
-                        <label className="label">
+                        <label onClick={handleForgetPassword} className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
                     </div>

@@ -28,7 +28,7 @@ export default function Navbar() {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <Link to='/about'>About</Link>
+                            <Link to='/aboutUs'>About</Link>
                             <Link to='/user'>UpdateUser</Link>
                             <Link to="/">Home</Link>
                         </ul>
@@ -38,7 +38,7 @@ export default function Navbar() {
                 <div className="navbar-center hidden lg:flex ">
                     <ul className="menu menu-horizontal px-1 space-x-4">
                         <Link className="px-4 py-2 rounded-lg hover:border-2 hover:border-blue-500" to="/">Home</Link>
-                        <Link className="px-4 py-2 rounded-lg hover:border-2 hover:border-blue-500" to='/about'>About</Link>
+                        <Link className="px-4 py-2 rounded-lg hover:border-2 hover:border-blue-500" to='/aboutUs'>About</Link>
                         <Link className="px-4 py-2 rounded-lg hover:border-2 hover:border-blue-500" to='/user'>UpdateUser</Link>
                     </ul>
                 </div>
@@ -55,7 +55,7 @@ export default function Navbar() {
                         }
                     </div>
                     {
-                        user && user.email ?<button onClick={logOut}className="px-6 p-2 border-2 border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white">Log-Out</button>: <Link className="px-6 p-2 border-2 border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white" to={`auth/login`}>Login</Link>
+                        user && user.email ?<button onClick={logOut}className="px-6 p-2 border-2 transition easy-in-out delay-200 border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white">Log-Out</button>: <Link className="px-6 p-2 border-2 transition easy-in-out delay-200 border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white" to={`auth/login`}>Login</Link>
                     }
                    
                 </div>

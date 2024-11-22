@@ -4,8 +4,8 @@ import { GiHiking } from "react-icons/gi";
 import { FaLocationPinLock } from "react-icons/fa6";
 export default function Support() {
   return (
-    <div >
-      <div className="my-10 space-y-2">
+    <div className="animate__animated animate__fadeInDown" >
+      <div className="my-10 space-y-2 ">
         <h2 className="text-2xl text-center font-semibold  text-orange-500">Support And Assistance</h2>
         <p className="w-9/12 mx-auto text-center text-slate-500 ">We provide dedicated support and assistance to ensure your experience is smooth and worry-free. Our team is always ready to guide you, answer your queries, and address your needs promptly, ensuring your satisfaction and safety every step of the way.</p>
       </div>

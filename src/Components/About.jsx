@@ -5,12 +5,14 @@ import Navbar from "./Navbar";
 const About = () => {
     return (
 
-        <div className="w-11/12 mx-auto">
+        <div className="">
 
-            <Navbar></Navbar>
+            <div className="h-20">
+                <Navbar></Navbar>
+            </div>
 
 
-            <div className="bg-gray-50 py-12 px-6 animate__animated animate__backInUp">
+            <div className="bg-gray-50 py-12 px-6 animate__animated animate__backInUp w-11/12 mx-auto">
                 <div className="max-w-7xl mx-auto text-center">
                     <h1 className="text-4xl font-semibold text-green-600 mb-6">About Eco Adventures</h1>
                     <p className="text-lg text-gray-700 mb-12">

@@ -29,7 +29,6 @@ export default function AdventuresDetailPage() {
 
 
     } = adventures;
-    console.log(adventures)
 
     return (
         <div>

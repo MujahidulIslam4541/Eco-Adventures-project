@@ -8,7 +8,7 @@ export default function Navbar() {
     const {user,logOut}=useContext(authContext)
     return (
         <div>
-            <div className="navbar h-10 sticky z-50 ">
+            <div className="navbar  backdrop-blur-xl z-50 fixed top-0 left-0 bg-white/30 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -28,18 +28,20 @@ export default function Navbar() {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <Link to="/">Home</Link>
                             <Link to='/aboutUs'>About</Link>
                             <Link to='/user'>UpdateUser</Link>
-                            <Link to="/">Home</Link>
+                            <Link to="/personal">My Profile</Link>
                         </ul>
                     </div>
                     <a className="font-semibold text-xl">Eco Ad<span className="text-indigo-500">vent</span>ures</a>
                 </div>
                 <div className="navbar-center hidden lg:flex ">
                     <ul className="menu menu-horizontal px-1 space-x-4">
-                        <Link className="px-4 py-2 rounded-lg hover:border-2 hover:border-blue-500" to="/">Home</Link>
-                        <Link className="px-4 py-2 rounded-lg hover:border-2 hover:border-blue-500" to='/aboutUs'>About</Link>
-                        <Link className="px-4 py-2 rounded-lg hover:border-2 hover:border-blue-500" to='/user'>UpdateUser</Link>
+                        <Link className="px-4 py-2 rounded-lg hover:border-2 hover:border-blue-500 transition ease-in-out delay-150" to="/">Home</Link>
+                        <Link className="px-4 py-2 rounded-lg hover:border-2 hover:border-blue-500 transition ease-in-out delay-150" to='/aboutUs'>About</Link>
+                        <Link className="px-4 py-2 rounded-lg hover:border-2 hover:border-blue-500 transition ease-in-out delay-150" to='/user'>UpdateUser</Link>
+                        <Link className="px-4 py-2 rounded-lg hover:border-2 hover:border-blue-500 transition ease-in-out delay-150" to="/personal">My Profile</Link>
                     </ul>
                 </div>
                 <div className="navbar-end">
@@ -55,7 +57,11 @@ export default function Navbar() {
                         }
                     </div>
                     {
-                        user && user.email ?<button onClick={logOut}className="px-6 p-2 border-2 transition easy-in-out delay-200 border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white">Log-Out</button>: <Link className="px-6 p-2 border-2 transition easy-in-out delay-200 border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white" to={`auth/login`}>Login</Link>
+                        user && user.email ?
+
+                        <button onClick={logOut}className="px-6 p-2 border-2 transition easy-in-out delay-200 border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white">Log-Out</button>: 
+
+                        <Link className="px-6 p-2 border-2 transition easy-in-out delay-200 border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white" to={`auth/login`}>Login</Link>
                     }
                    
                 </div>

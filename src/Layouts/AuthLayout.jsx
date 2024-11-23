@@ -8,7 +8,7 @@ export default function AuthLayout() {
         <div>
 
             {/* Navbar section */}
-            <header className="w-11/12 mx-auto">
+            <header className=" h-20">
                 <Navbar></Navbar>
             </header>
 

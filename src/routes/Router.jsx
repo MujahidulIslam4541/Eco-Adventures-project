@@ -8,6 +8,8 @@ import AdventuresDetails from "../Components/AdventuresDetails";
 import PrivetRoutes from "./PrivetRoutes";
 import About from "../Components/About";
 import ErrorPage from "../Components/ErrorPage";
+import UserInpormation from "../Components/UserInpormation";
+import UpdateProfile from "../Components/UpdateProfile";
 
 
 
@@ -28,6 +30,10 @@ const Router = createBrowserRouter([
         element:<About></About>
     },
     {
+        path:"/personal",
+        element:<UserInpormation></UserInpormation>
+    },
+    {
         path: "/about/:id",
         element: <PrivetRoutes>
             <AdventuresDetails></AdventuresDetails>
@@ -36,7 +42,7 @@ const Router = createBrowserRouter([
     },
     {
         path: "/user",
-        element: <h2>UpdateUser</h2>
+        element: <UpdateProfile></UpdateProfile>
     },
 
     {

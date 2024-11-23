@@ -9,7 +9,7 @@ import Gallary from "../Components/Gallary";
 export default function MainLayoutes() {
   return (
     <div>
-      <section className="w-11/12 mx-auto">
+      <section className=" h-20">
         {/* Navbar section */}
         <Navbar></Navbar>
       </section>

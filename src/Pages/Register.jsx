@@ -19,15 +19,13 @@ export default function Register() {
         const photo = from.photo.value;
         const email = from.email.value;
         const password = from.password.value;
-        // console.log({ name, photo, email, password });
 
-        
+
 
         createNewUser(email, password)
             .then(result => {
                 const user = result.user;
                 setUser(user)
-                // console.log(user)
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
                         navigate('/')
@@ -40,7 +38,8 @@ export default function Register() {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorCode, errorMessage)
+                toast.error(errorCode, errorMessage);
+
             });
     }
 

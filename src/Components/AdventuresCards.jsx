@@ -13,7 +13,6 @@ import 'animate.css';
 
 export default function AdventuresCards() {
   const [adventuresCards, setData] = useState([])
-  // console.log(adventuresCards)
   useEffect(() => {
     fetch('adventures.json')
       .then(res => res.json())

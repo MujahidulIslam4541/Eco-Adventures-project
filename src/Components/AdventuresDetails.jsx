@@ -7,7 +7,7 @@ export default function AdventuresDetails() {
     return (
         <div>
 
-            <section className="w-11/12 mx-auto">
+            <section className="h-20">
                 {/* navbar */}
                 <Navbar></Navbar>
             </section>
